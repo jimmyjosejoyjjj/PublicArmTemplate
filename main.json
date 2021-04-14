@@ -58,7 +58,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri":"https://raw.githubusercontent.com/jimmyjosejoyjjj/ArmTemplate2/main/adlstemplate.json?token=ATVKL4LWUTCKJVDRUIR2X6DAO3HW4"
+          "uri":"https://raw.githubusercontent.com/jimmyjosejoyjjj/PublicArmTemplate/main/adlstemplate.json"
         },
         "parameters": {
             "location": {
@@ -107,7 +107,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri":"https://raw.githubusercontent.com/jimmyjosejoyjjj/ArmTemplate2/main/databrickstemplate.json?token=ATVKL4JUXZC22MWHTCPFX23AO3HZG"
+          "uri":"https://github.com/jimmyjosejoyjjj/PublicArmTemplate/blob/main/databrickstemplate.json"
         },
         "parameters": {
             "location": {
