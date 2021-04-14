@@ -1,0 +1,61 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "location": {
+            "value": "East US"
+        },
+        "storageAccountName": {
+            "value": "testjimmystorage2"
+        },
+        "accountType": {
+            "value": "Standard_LRS"
+        },
+        "kind": {
+            "value": "StorageV2"
+        },
+        "accessTier": {
+            "value": "Hot"
+        },
+        "minimumTlsVersion": {
+            "value": "TLS1_2"
+        },
+        "supportsHttpsTrafficOnly": {
+            "value": true
+        },
+        "allowBlobPublicAccess": {
+            "value": false
+        },
+        "allowSharedKeyAccess": {
+            "value": true
+        },
+        "networkAclsBypass": {
+            "value": "AzureServices"
+        },
+        "networkAclsDefaultAction": {
+            "value": "Allow"
+        },
+        "isHnsEnabled": {
+            "value": true
+        },
+        "workspaceName": {
+            "value": "testjimmydb2"
+        },
+        "tier": {
+            "value": "trial"
+        },
+        "tagValues": {
+            "value": {
+					"Name": "testjimmydb2",
+                    "ApplicationID": "AID361",
+                    "CostCenter": "6000",
+                    "Creator": "hh832",
+                    "Environment": "Development",
+                    "Owner": "ge582",
+                    "Product": "CorpSystems",
+                    "ProductLineID": "",
+                    "SupportGroupID": "1997021"
+            }
+        }
+    }
+}

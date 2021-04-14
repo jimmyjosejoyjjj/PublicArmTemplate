@@ -1,0 +1,139 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "location": {
+            "type": "string"
+        },
+        "storageAccountName": {
+            "type": "string"
+        },
+        "accountType": {
+            "type": "string"
+        },
+        "kind": {
+            "type": "string"
+        },
+        "accessTier": {
+            "type": "string"
+        },
+        "minimumTlsVersion": {
+            "type": "string"
+        },
+        "supportsHttpsTrafficOnly": {
+            "type": "bool"
+        },
+        "allowBlobPublicAccess": {
+            "type": "bool"
+        },
+        "allowSharedKeyAccess": {
+            "type": "bool"
+        },
+        "networkAclsBypass": {
+            "type": "string"
+        },
+        "networkAclsDefaultAction": {
+            "type": "string"
+        },
+        "isHnsEnabled": {
+            "type": "bool"
+        },
+         "workspaceName": {
+            "type": "string"
+        },
+        "tier": {
+            "defaultValue": "premium",
+            "type": "string"
+        },
+        "tagValues": {
+            "type": "object"
+        }
+    },
+   
+    "resources": [
+        {
+            "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-06-01",
+      "name": "storageDeploy",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri":"https://raw.githubusercontent.com/jimmyjosejoyjjj/ArmTemplate2/main/adlstemplate.json?token=ATVKL4LWUTCKJVDRUIR2X6DAO3HW4"
+        },
+        "parameters": {
+            "location": {
+                "value": "[parameters('location')]"
+            },
+            "accessTier": {
+                "value": "[parameters('accessTier')]"
+            },
+            "accountType": {
+                "value": "[parameters('accountType')]"
+            },
+            "allowBlobPublicAccess": {
+                "value": "[parameters('allowBlobPublicAccess')]"
+            },
+            "allowSharedKeyAccess": {
+                "value": "[parameters('allowSharedKeyAccess')]"
+            },
+            "isHnsEnabled": {
+                "value": "[parameters('isHnsEnabled')]"
+            },
+            "kind": {
+                "value": "[parameters('kind')]"
+            },
+            "minimumTlsVersion": {
+                "value": "[parameters('minimumTlsVersion')]"
+            },
+            "networkAclsBypass": {
+                "value": "[parameters('networkAclsBypass')]"
+            },
+            "networkAclsDefaultAction": {
+                "value": "[parameters('networkAclsDefaultAction')]"
+            },
+            "storageAccountName": {
+                "value": "[parameters('storageAccountName')]"
+            },
+            "supportsHttpsTrafficOnly": {
+                "value": "[parameters('supportsHttpsTrafficOnly')]"
+            }
+        }
+      }
+        },
+      {
+         "type": "Microsoft.Resources/deployments",
+      "apiVersion": "2020-06-01",
+      "name": "databricksDeploy",
+      "properties": {
+        "mode": "Incremental",
+        "templateLink": {
+          "uri":"https://raw.githubusercontent.com/jimmyjosejoyjjj/ArmTemplate2/main/databrickstemplate.json?token=ATVKL4JUXZC22MWHTCPFX23AO3HZG"
+        },
+        "parameters": {
+            "location": {
+                "value": "[parameters('location')]"
+            },
+            "workspaceName": {
+                "value": "[parameters('workspaceName')]"
+            },
+            "tier": {
+                "value": "[parameters('tier')]"
+            },
+            "tagValues": {
+                "value": "[parameters('tagValues')]"
+            }
+        }
+      }
+      }
+    ],
+    "outputs": {
+        "storageOutputs": {
+            "type": "object",
+            "value":"[reference('storageDeploy').outputs]"
+        },
+        "databricksOutputs": {
+            "type": "object",
+            "value":"[reference('databricksDeploy').outputs]"
+        }
+    }
+}
