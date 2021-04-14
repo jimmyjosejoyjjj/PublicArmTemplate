@@ -107,7 +107,7 @@
       "properties": {
         "mode": "Incremental",
         "templateLink": {
-          "uri":"https://github.com/jimmyjosejoyjjj/PublicArmTemplate/blob/main/databrickstemplate.json"
+          "uri":"https://raw.githubusercontent.com/jimmyjosejoyjjj/PublicArmTemplate/main/databrickstemplate.json"
         },
         "parameters": {
             "location": {
